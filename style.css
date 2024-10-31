@@ -1,0 +1,268 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Color Palette */
+:root {
+    --primary-color: #4A90E2;      
+    --secondary-color: #D94155;    
+    --accent-color: #F5A623;       
+    --background-color: #F0F4F8;   
+    --text-color: #333;            
+    --footer-color: #2D3E50;       
+}
+
+/* Body Styling */
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* Header & Navigation */
+header {
+    background-color: var(--primary-color);
+    padding: 1rem;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
+nav .logo img {
+    height: 70px;
+    width: 70px;
+    border-radius: 50px;
+    margin: 0 auto; /* Center logo */
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    flex-wrap: wrap; /* Allow wrapping */
+    margin-right: 0; /* Remove margin for better alignment */
+}
+
+nav ul li {
+    margin: 0 1rem; /* Adjusted margin for better spacing */
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 0.5rem;
+}
+
+nav ul li a:hover {
+    color: var(--accent-color);
+}
+
+nav select {
+    padding: 0.5rem;
+    background-color: var(--secondary-color);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+}
+
+/* Main Sections */
+h2 {
+    text-align: center; 
+    color: var(--primary-color);
+    font-size: 2rem;
+    margin-bottom: 2rem; 
+}
+
+/* Responsive Styles */
+main {
+    padding: 2rem;
+}
+
+/* Courses Section */
+#courses {
+    display: flex;
+    flex-direction: column; /* Stack heading and cards vertically */
+    align-items: center; /* Center items horizontally */
+    margin-bottom: 50px;
+}
+
+.course-container {
+    display: grid; /* Use grid layout for the course cards */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid */
+    gap: 2rem; /* Space between cards */
+    width: 100%; /* Ensure full width for the container */
+    justify-items: center; /* Center items horizontally */
+}
+
+/* Card Styles */
+#courses .course {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    padding: 1rem;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#courses .course:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+#courses .course h3 {
+    color: var(--secondary-color);
+    font-size: 1.5rem;
+}
+
+#courses .cta {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: var(--accent-color);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 1rem;
+}
+
+#courses .cta:hover {
+    background-color: var(--secondary-color);
+}
+
+
+/* Timetable Section */
+#timetable table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+    margin-bottom: 50px;
+}
+
+#timetable th,
+#timetable td {
+    padding: 0.75rem;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+#timetable th {
+    background-color: var(--primary-color);
+    color: #fff;
+}
+
+#timetable td {
+    background-color: #fff;
+}
+
+/* About Us Section */
+.about-content {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    margin-bottom: 50px;
+    flex-wrap: wrap; /* Allow wrapping */
+}
+
+.about-content img {
+    max-width: 50%; /* Ensure responsiveness */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 10px;
+    flex: 1; /* Allow image to take available space */
+}
+
+.about-content .about-text {
+    flex: 2; /* Allow text to take more space */
+}
+
+.about-content .about-text p {
+    margin-bottom: 1rem;
+}
+
+/* Contact Section */
+#contact {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    max-width: 600px;
+    margin: 2rem auto;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+form input,
+form textarea,
+form button {
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+form button {
+    background-color: var(--primary-color);
+    color: #fff;
+    cursor: pointer;
+    border: none;
+    font-weight: bold;
+}
+
+form button:hover {
+    background-color: var(--secondary-color);
+}
+
+/* Footer */
+footer {
+    background-color: var(--footer-color);
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+    margin-top: 2rem;
+}
+
+/* Responsive Media Queries */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column; /* Stack navigation items vertically */
+        margin: 0; /* Reset margin for better alignment */
+    }
+
+    .about-content {
+        flex-direction: column; /* Stack about content */
+    }
+
+    .about-content img {
+        max-width: 100%; /* Ensure image is responsive */
+        height: auto; /* Maintain aspect ratio */
+    }
+
+    .course-container {
+        grid-template-columns: 1fr; /* Stack course cards on smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    h2 {
+        font-size: 1.5rem; /* Smaller heading for mobile */
+    }
+
+    nav .logo img {
+        height: 50px; /* Smaller logo */
+        width: 50px; /* Smaller logo */
+    }
+
+    nav ul li {
+        margin: 0.5rem 0; /* Adjust margin for vertical spacing */
+    }
+}
